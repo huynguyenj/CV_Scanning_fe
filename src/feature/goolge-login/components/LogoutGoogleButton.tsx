@@ -1,4 +1,4 @@
-import { supabaseClient } from '../../../lib/supabase'
+import { supabaseClient } from '@/lib/supabase'
 import { authStore } from '../store/auth-store'
 
 export default function LogoutGoogleButton() {

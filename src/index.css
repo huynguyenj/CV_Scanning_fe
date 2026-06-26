@@ -1,10 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
-
+@import "tailwindcss/preflight.css" layer(base);
 :root {
-  --primary: '#000000';
+  --primary: '#4B176A';
+  --secondary: '#8870D0';
+  --deep-cove: '#150542';
+  --mineral-green: '#3D6260';
+  --warning: '#F6BF46';
+  --success: '#089F25';
+  --danger: '#8F0B13';
+
+  /*Typography*/
+  --size-xs: 0.75rem;
+  --size-sm: 0.875rem;
+  --size-base: 1rem;
+  --size-lg: 1.125rem;
+  --size-xl: 1.25rem;
+  --size-2xl: 1.5rem;
+  --size-3xl: 2rem;
+
+  /* Spacing */
+  --space-0: 0;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+   /* Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 10px;
+  --radius-xl: 12px;
+  --radius-2xl: 14px;
+  --radius-full: 9999px;
+
+  /*Line height*/
+  --line-height-sm: 1;
+  --line-height-m: 1.4;
+  --line-height-xl: 1.8;
 
 }
 
 @theme inline {
   --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-deep-cove: var(--deep-cove);
+  --color-mineral-green: var(--mineral-green);
+  --color-warning: var(--warning);
+  --color-success: var(--success);
+  --color-danger: var(--danger);
+
+  --text-xs: var(--size-xs);
+  --text-sm: var(--size-sm);
+  --text-base: var(--size-base);
+  --text-lg: var(--size-lg);
+  --text-xl: var(--size-xl);
+  --text-2xl: var(--size-2xl);
+  --text-3xl: var(--size-3xl);
+
+  --spacing-0: var(--space-0);
+  --spacing-1: var(--space-1);
+  --spacing-2: var(--space-2);
+  --spacing-3: var(--space-3);
+  --spacing-4: var(--space-4);
+  --spacing-5: var(--space-5);
+  --spacing-6: var(--space-6);
+  --spacing-8: var(--space-8);
+  --spacing-10: var(--space-10);
+  --spacing-12: var(--space-12);
+  --spacing-16: var(--space-16);
+
+  --leading-sm: var(--line-height-sm);
+  --leading-m: var(--line-height-m);
+  --leading-xl: var(--line-height-xl);
+}
+
+@layer base {
+  html {
+      font-family: Oswald, sans-serif;
+  }
+   body {
+      margin: 0;
+      box-sizing: border-box;
+   }
 }

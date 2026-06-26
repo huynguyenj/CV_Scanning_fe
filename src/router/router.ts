@@ -1,5 +1,5 @@
 import { createBrowserRouter } from 'react-router'
-import PageLayout from '../layout/PageLayout'
+import PageLayout from '@/layout/PageLayout'
 export const router = createBrowserRouter([
       {
             path: '/',
@@ -8,7 +8,7 @@ export const router = createBrowserRouter([
                   {
                         index: true,
                         lazy:{
-                              Component: async() => (await import('../pages/CvPage')).default
+                              Component: async() => (await import('@/pages/CvPage')).default
                         }
                   }
             ]
