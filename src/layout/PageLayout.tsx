@@ -1,13 +1,13 @@
-import { useEffect, type PropsWithChildren } from 'react'
+import { useEffect } from 'react'
 import LogoutGoogleButton from '@/feature/goolge-login/components/LogoutGoogleButton'
 import LoginGoogleButton from '@/feature/goolge-login/components/LoginGoogleButton'
 import { supabaseClient } from '@/lib/supabase'
 import {  authStore } from '@/feature/goolge-login/store/auth-store'
 import { apiPrivate } from '@/config/api'
+import { Outlet } from 'react-router'
+import Logo from '@/assets/logo.png'
 
-type PageLayoutType = PropsWithChildren
-
-export default function PageLayout({ children }: PageLayoutType) {
+export default function PageLayout() {
   const auth = authStore()
   useEffect(() => {
         // Supabase automatically handles the token from the URL
@@ -25,20 +25,39 @@ export default function PageLayout({ children }: PageLayoutType) {
             }
         });
     }, []);
+    
   return (
-    <div>
-      <nav className='w-full h-20 flex justify-end items-center bg-black text-white px-10'>
+    <div className='relative'>
+      <nav className='fixed inset-0 w-full h-20 flex justify-between items-center bg-ebony-grey text-white px-10'>
+        <div className='flex items-center gap-2'>
+          <img src={Logo} alt="logo" width={11} height={11} className='w-11 aspect-square rounded-full'/>
+          <p>CVAI</p>
+        </div>
          <div className='flex items-center justify-end'>
             { auth.accessToken ?
-                  <LogoutGoogleButton/>
+            <div className='flex gap-2'>
+              <div className='flex items-center justify-center w-10 aspect-square rounded-full bg-amber-200'>
+                { auth.avatarUrl ?
+                  <img src={auth.avatarUrl} alt="avatar" width={10} height={10} className='shrink-0 object-contain w-full aspect-square rounded-full'/>
+                  :
+                  <div className='bg-primary w-full h-full'>
+                    {auth.name?.charAt(0).toUpperCase()}
+                  </div>
+                }
+              </div>
+              <LogoutGoogleButton/>
+            </div>
                   :
                   <LoginGoogleButton/>
             }
          </div>
       </nav>
-      <main>
-            {children}
+      <main className='mt-20 px-10 py-5'>
+            <Outlet/>
       </main>
+      <footer>
+
+      </footer>
     </div>
   )
 }

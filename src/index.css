@@ -3,13 +3,14 @@
 @import "tailwindcss";
 @import "tailwindcss/preflight.css" layer(base);
 :root {
-  --primary: '#4B176A';
-  --secondary: '#8870D0';
-  --deep-cove: '#150542';
-  --mineral-green: '#3D6260';
-  --warning: '#F6BF46';
-  --success: '#089F25';
-  --danger: '#8F0B13';
+  --primary: #4B176A;
+  --secondary: #8870D0;
+  --deep-cove: #150542;
+  --mineral-green: #3D6260;
+  --ebony-grey: #242C34;
+  --warning: #F6BF46;
+  --success: #089F25;
+  --danger: #8F0B13;
 
   /*Typography*/
   --size-xs: 0.75rem;
@@ -56,6 +57,7 @@
   --color-warning: var(--warning);
   --color-success: var(--success);
   --color-danger: var(--danger);
+  --color-ebony-grey: var(--ebony-grey);
 
   --text-xs: var(--size-xs);
   --text-sm: var(--size-sm);
