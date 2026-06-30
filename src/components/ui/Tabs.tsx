@@ -35,9 +35,10 @@ function Tabs({
   )
 }
 
-function TabTrigger({ onSelect, value, content, className, isSelect= false }: { onSelect: Dispatch<SetStateAction<string>>, value: string, content: string, className?: string, isSelect: boolean }) {
-      const styleSelect = isSelect ? 'border-2 border-white/80' : 'border-none' 
-      return <button onClick={() => onSelect(value)} className={cn(className, styleSelect, 'px-2 rounded-md hover:text-gray-200')}>{content}</button>
+function TabTrigger({ onSelect, value, content, className, isSelect= false, isDisable= false }: { onSelect: Dispatch<SetStateAction<string>>, value: string, content: string, className?: string, isSelect: boolean, isDisable?: boolean }) {
+      const styleSelect = isSelect ? 'border-2 border-white/80' : 'border-none'       
+      const disabledStyle = isDisable === false ? '' : 'opacity-60'
+      return <button disabled={isDisable} onClick={() => onSelect(value)} className={cn(className, styleSelect, 'px-2 rounded-md hover:text-gray-200', disabledStyle)}>{content}</button>
 }
 
 export { Tabs, TabTrigger }
