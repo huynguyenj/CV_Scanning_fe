@@ -25,7 +25,7 @@ export default function FileInput({ onGetFile, typeFiles='All' }: FileInputProps
   }
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.currentTarget && inputFileRef.current?.files) {
-      console.log(inputFileRef.current.files[0].type.split('/')[1]);
+      // console.log(inputFileRef.current.files[0].type.split('/')[1]);
       if (!validateFileType(inputFileRef.current.files[0].type.split('/')[1])) return
       onGetFile(inputFileRef.current?.files[0])
       setFile(inputFileRef.current.files[0])

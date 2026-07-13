@@ -8,8 +8,8 @@ const tabVariants = cva(
             variants: {
                   variant: {
                         default: 'bg-transparent',
-                        primary: 'bg-deep-cove text-white',
-                        secondary: 'bg-ebony-grey text-white'
+                        primary: 'bg-deep-cove text-light-white',
+                        secondary: 'bg-ebony-grey text-light-white'
                   },
                   default: {
                         variant: 'default',

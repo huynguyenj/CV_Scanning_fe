@@ -11,7 +11,7 @@
   --warning: #F6BF46;
   --success: #089F25;
   --danger: #8F0B13;
-
+  --light-white: #F9F8F6;
   /*Typography*/
   --size-xs: 0.75rem;
   --size-sm: 0.875rem;
@@ -58,6 +58,7 @@
   --color-success: var(--success);
   --color-danger: var(--danger);
   --color-ebony-grey: var(--ebony-grey);
+  --color-light-white: var(--light-white);
 
   --text-xs: var(--size-xs);
   --text-sm: var(--size-sm);
